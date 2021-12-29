@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MediaPlayer</string>
+    <string name="raw">Audio</string>
+    <string name="videoraw">Video</string>
+    <string name="pause">PauseAudio</string>
+    <string name="resume">PlayAudio</string>
+    <string name="stop">StopAudio</string>
+    <string name="loop">Loop</string>
+    <string name="backward">+30s</string>
+    <string name="forward">-30s</string>
+    <string name="play">Play</string>
+</resources>
