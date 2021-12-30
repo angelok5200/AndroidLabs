@@ -38,18 +38,24 @@ public class FragmentOne extends Fragment {
 
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = root.findViewById(radioId);
-                Bundle bundle = new Bundle();
-                bundle.putString("color", radioButton.getText().toString());
-                bundle.putString("text", textView.getText().toString());
 
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                if (!(textView.getText().length() == 0 & radioId == -1)) {
+                    Toast.makeText(getContext(), "All information needed", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("color", radioButton.getText().toString());
+                    bundle.putString("text", textView.getText().toString());
 
-                FragmentTwo fragmentTwo = new FragmentTwo();
-                fragmentTwo.setArguments(bundle);
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                fragmentTransaction.replace(R.id.frame_container, fragmentTwo);
-                fragmentTransaction.commit();
+                    FragmentTwo fragmentTwo = new FragmentTwo();
+                    fragmentTwo.setArguments(bundle);
+
+                    fragmentTransaction.replace(R.id.frame_container, fragmentTwo);
+                    fragmentTransaction.commit();
+                }
             }
         });
         return root;
